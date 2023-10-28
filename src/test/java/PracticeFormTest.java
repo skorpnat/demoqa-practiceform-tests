@@ -5,6 +5,7 @@ import org.junit.jupiter.api.Test;
 
 
 import static com.codeborne.selenide.Condition.text;
+import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 
 public class PracticeFormTest {
@@ -26,7 +27,7 @@ public class PracticeFormTest {
         $("#firstName").setValue("Nata");
         $("#lastName").setValue("Natanova");
         $("#userEmail").setValue("nnatta@test.com");
-        $("[for='gender-radio-2']").click();
+        $("#genterWrapper").$(byText("Female")).click();
         $("#userNumber").setValue("9136754576");
 
         //выбор даты  из календаря
@@ -36,7 +37,7 @@ public class PracticeFormTest {
         $(".react-datepicker__day--030").click();
 
         $("#subjectsInput").val("Math").pressEnter();
-        $("[for='hobbies-checkbox-2']").click();
+        $("#hobbiesWrapper").$(byText("Reading")).click();
         $("#currentAddress").setValue("CurrentAddress str 234");
         $("#uploadPicture").uploadFromClasspath("cat.png");
         $("#state").scrollTo().click();
