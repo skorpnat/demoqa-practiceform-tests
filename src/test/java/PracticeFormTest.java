@@ -47,10 +47,16 @@ public class PracticeFormTest {
         $("#submit").click();
 
         //Проверка отображения результата
-        $(".table-responsive").shouldHave(
-                text("Nata Natanova"), text("nnatta@test.com"), text("Female"),
-                text("9136754576"), text("30 December,1974"), text("Maths"), text("Reading"),
-                text("cat.png"), text("CurrentAddress str 234"), text("Uttar Pradesh Lucknow"));
+        $(".table-responsive").$(byText("Student Name")).parent().shouldHave(text("Nata Natanova"));
+        $(".table-responsive").$(byText("Student Email")).parent().shouldHave(text("nnatta@test.com"));
+        $(".table-responsive").$(byText("Gender")).parent().shouldHave(text("Female"));
+        $(".table-responsive").$(byText("Mobile")).parent().shouldHave(text("9136754576"));
+        $(".table-responsive").$(byText("Date of Birth")).parent().shouldHave(text("30 December,1974"));
+        $(".table-responsive").$(byText("Subjects")).parent().shouldHave(text("Maths"));
+        $(".table-responsive").$(byText("Hobbies")).parent().shouldHave(text("Reading"));
+        $(".table-responsive").$(byText("Picture")).parent().shouldHave(text("cat.png"));
+        $(".table-responsive").$(byText("Address")).parent().shouldHave(text("CurrentAddress str 234"));
+        $(".table-responsive").$(byText("State and City")).parent().shouldHave(text("Uttar Pradesh Lucknow"));
 
     }
 
