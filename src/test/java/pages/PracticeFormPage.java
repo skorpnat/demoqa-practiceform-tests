@@ -3,17 +3,16 @@ package pages;
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
 import pages.components.CalendarComponent;
+import pages.components.TableComponent;
 
-import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 
 public class PracticeFormPage {
 
     CalendarComponent calendarComponent = new CalendarComponent();
-
+    TableComponent tableComponent = new TableComponent();
     public SelenideElement calendar = $("#dateOfBirthInput"),
-            tableResult = $(".table-responsive"),
             firstName = $("#firstName"),
             lastName = $("#lastName"),
             email = $("#userEmail"),
@@ -105,8 +104,8 @@ public class PracticeFormPage {
         return this;
     }
 
-    public PracticeFormPage checkResultTableLine(String key, String value) {
-        tableResult.$(byText(key)).parent().shouldHave(text(value));
+    public PracticeFormPage checkResultTable(String key, String value) {
+        tableComponent.checkResultTableLine(key, value);
         return this;
     }
 

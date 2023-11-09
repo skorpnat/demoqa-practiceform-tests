@@ -24,16 +24,16 @@ public class PracticeFormTest extends TestBase {
                 .setCity("Lucknow")
                 .submit();
 
-        practiceFormPage.checkResultTableLine("Student Name", "Nata Natanova")
-                .checkResultTableLine("Student Email", "nnatta@test.com")
-                .checkResultTableLine("Gender", "Female")
-                .checkResultTableLine("Mobile", "9136754576")
-                .checkResultTableLine("Date of Birth", "30 December,1974")
-                .checkResultTableLine("Subjects", "Maths")
-                .checkResultTableLine("Hobbies", "Reading")
-                .checkResultTableLine("Picture", "cat.png")
-                .checkResultTableLine("Address", "CurrentAddress str 234")
-                .checkResultTableLine("State and City", "Uttar Pradesh Lucknow");
+        practiceFormPage.checkResultTable("Student Name", "Nata Natanova")
+                .checkResultTable("Student Email", "nnatta@test.com")
+                .checkResultTable("Gender", "Female")
+                .checkResultTable("Mobile", "9136754576")
+                .checkResultTable("Date of Birth", "30 December,1974")
+                .checkResultTable("Subjects", "Maths")
+                .checkResultTable("Hobbies", "Reading")
+                .checkResultTable("Picture", "cat.png")
+                .checkResultTable("Address", "CurrentAddress str 234")
+                .checkResultTable("State and City", "Uttar Pradesh Lucknow");
     }
 
     @Test
@@ -46,9 +46,9 @@ public class PracticeFormTest extends TestBase {
                 .setPhoneNumber("9136754576")
                 .submit();
 
-        practiceFormPage.checkResultTableLine("Student Name", "Nata Natanova")
-                .checkResultTableLine("Gender", "Female")
-                .checkResultTableLine("Mobile", "9136754576");
+        practiceFormPage.checkResultTable("Student Name", "Nata Natanova")
+                .checkResultTable("Gender", "Female")
+                .checkResultTable("Mobile", "9136754576");
 
     }
 
