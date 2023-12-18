@@ -54,8 +54,7 @@ public class PracticeFormTest extends TestBase {
     @DisplayName("Проверка формы с минимально заполненными данными")
     void inputMinimalData() {
         step("Открыть форму", () -> {
-            practiceFormPage.openPage()
-                    .cleanAdvertisementOnPage();
+            practiceFormPage.openPage().cleanAdvertisementOnPage();
         });
 
         step("Ввести данные", () -> {

@@ -27,15 +27,14 @@ public class PracticeFormPage {
             selectCity = stateCityWrapper.$("#react-select-4-input"),
             submit = $("#submit");
 
+    public PracticeFormPage openPage() {
+        open("/automation-practice-form");
+        return this;
+    }
 
     public PracticeFormPage cleanAdvertisementOnPage() {
         executeJavaScript("$('#fixedban').remove()");
         executeJavaScript("$('footer').remove");
-        return this;
-    }
-
-    public PracticeFormPage openPage() {
-        open("/automation-practice-form");
         return this;
     }
 
