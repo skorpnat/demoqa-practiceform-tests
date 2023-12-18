@@ -5,6 +5,8 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import pages.PracticeFormPage;
 import org.junit.jupiter.api.Tag;
+
+import static com.codeborne.selenide.Selenide.open;
 import static io.qameta.allure.Allure.step;
 
 @Tag("demoqa")
@@ -16,8 +18,8 @@ public class PracticeFormTest extends TestBase {
     @DisplayName("Проверка формы со всеми заполненными полями")
     void fillFormTest() {
         step("Открыть форму", () -> {
-            practiceFormPage.openPage()
-                    .cleanAdvertisementOnPage();
+            open("/automation-practice-form");
+            practiceFormPage.cleanAdvertisementOnPage();
         });
 
         step("Ввести данные", () -> {
@@ -54,7 +56,8 @@ public class PracticeFormTest extends TestBase {
     @DisplayName("Проверка формы с минимально заполненными данными")
     void inputMinimalData() {
         step("Открыть форму", () -> {
-            practiceFormPage.openPage().cleanAdvertisementOnPage();
+            open("/automation-practice-form");
+            practiceFormPage.cleanAdvertisementOnPage();
         });
 
         step("Ввести данные", () -> {
@@ -76,8 +79,8 @@ public class PracticeFormTest extends TestBase {
     @DisplayName("Проверка не валидного номера телефона")
     void inputInvalidMobileNumber() {
         step("Открыть форму", () -> {
-            practiceFormPage.openPage()
-                    .cleanAdvertisementOnPage();
+            open("/automation-practice-form");
+            practiceFormPage.cleanAdvertisementOnPage();
         });
         step("Ввести данные", () -> {
                     practiceFormPage.setFirstName(testData.firstName)

@@ -14,7 +14,7 @@ public class TestBase {
     @BeforeAll
     static void beforeAll() {
         Configuration.browserSize = "1920x1080";
- //       Configuration.baseUrl = "https://demoqa.com";
+        Configuration.baseUrl = "https://demoqa.com";
         Configuration.pageLoadStrategy = "eager";
         Configuration.holdBrowserOpen = false;
         Configuration.timeout = 5000; // default 4000
@@ -39,11 +39,11 @@ public class TestBase {
         Attach.addVideo();
 
     }
-    @AfterEach
-    void clearAll() {
-        clearBrowserCookies();
-        clearBrowserLocalStorage();
-        closeWebDriver();
-    }
+//    @AfterEach
+//    void clearAll() {
+//        clearBrowserCookies();
+//        clearBrowserLocalStorage();
+//        closeWebDriver();
+//    }
 
 }
