@@ -27,11 +27,6 @@ public class PracticeFormPage {
             selectCity = stateCityWrapper.$("#react-select-4-input"),
             submit = $("#submit");
 
-    public PracticeFormPage openPage() {
-        open("https://demoqa.com/automation-practice-form");
-        return this;
-    }
-
     public PracticeFormPage cleanAdvertisementOnPage() {
         executeJavaScript("$('#fixedban').remove()");
         executeJavaScript("$('footer').remove()");

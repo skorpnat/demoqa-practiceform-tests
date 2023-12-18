@@ -5,9 +5,9 @@ import helpers.Attach;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.openqa.selenium.remote.DesiredCapabilities;
-import static com.codeborne.selenide.Selenide.*;
 import com.codeborne.selenide.logevents.SelenideLogger;
 import io.qameta.allure.selenide.AllureSelenide;
+
 import java.util.Map;
 
 public class TestBase {
@@ -31,6 +31,7 @@ public class TestBase {
         SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
 
     }
+
     @AfterEach
     void addAttachments() {
         Attach.screenshotAs("Last screenshot");
@@ -39,11 +40,5 @@ public class TestBase {
         Attach.addVideo();
 
     }
-//    @AfterEach
-//    void clearAll() {
-//        clearBrowserCookies();
-//        clearBrowserLocalStorage();
-//        closeWebDriver();
-//    }
 
 }
