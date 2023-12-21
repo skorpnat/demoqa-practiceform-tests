@@ -15,6 +15,7 @@ public class PracticeFormTest extends TestBase {
     TestData testData = new TestData();
 
     @Test
+    @Tag("positive")
     @DisplayName("Проверка формы со всеми заполненными полями")
     void fillFormTest() {
         step("Открыть форму", () -> {
@@ -53,6 +54,7 @@ public class PracticeFormTest extends TestBase {
     }
 
     @Test
+    @Tag("positive")
     @DisplayName("Проверка формы с минимально заполненными данными")
     void inputMinimalData() {
         step("Открыть форму", () -> {
@@ -76,6 +78,7 @@ public class PracticeFormTest extends TestBase {
     }
 
     @Test
+    @Tag("negative")
     @DisplayName("Проверка не валидного номера телефона")
     void inputInvalidMobileNumber() {
         step("Открыть форму", () -> {
