@@ -13,19 +13,12 @@ import java.util.Map;
 public class TestBase {
     @BeforeAll
     static void beforeAll() {
-        Configuration.remote = "https://user1:1234@" + System.getProperty("selenoid", "selenoid.autotests.cloud") +"/wd/hub";
+        Configuration.remote = System.getProperty("selenoid", "https://user1:1234@selenoid.autotests.cloud/wd/hub");
         Configuration.baseUrl = System.getProperty("baseUrl", "https://demoqa.com");
         Configuration.browser = System.getProperty("browser", "chrome");
         Configuration.browserVersion = System.getProperty("browserVersion", "100.0");
         Configuration.browserSize = System.getProperty("browserSize", "1920x1080");
-
-//        Configuration.browserSize = "1920x1080";
-//        Configuration.baseUrl = "https://demoqa.com";
-//        Configuration.pageLoadStrategy = "eager";
-//        Configuration.holdBrowserOpen = false;
-//        Configuration.timeout = 5000; // default 4000
-//
-//        Configuration.remote = "https://user1:1234@selenoid.autotests.cloud/wd/hub";
+        Configuration.pageLoadStrategy = "eager";
 
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("selenoid:options", Map.<String, Object>of(
