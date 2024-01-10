@@ -21,13 +21,20 @@ repositories {
     mavenCentral()
 }
 
+def     ownerVersion = "1.0.12",
+        jschVersion = "0.1.55",
+        webDriverManagerVersion = "5.6.2"
+
 dependencies {
     testImplementation(
             "com.codeborne:selenide:6.19.1",
             "org.junit.jupiter:junit-jupiter:5.10.0",
             'org.slf4j:slf4j-simple:2.0.7',
             'com.github.javafaker:javafaker:1.0.2',
-            'io.qameta.allure:allure-selenide:2.24.0'
+            'io.qameta.allure:allure-selenide:2.24.0',
+            "com.jcraft:jsch:$jschVersion",
+            "org.aeonbits.owner:owner:$ownerVersion",
+            "io.github.bonigarcia:webdrivermanager:$webDriverManagerVersion"
     )
     testRuntimeOnly('org.junit.jupiter:junit-jupiter-engine:5.9.0')
 }
@@ -35,16 +42,6 @@ tasks.withType(JavaCompile) {
     options.encoding = 'UTF-8'
 }
 
-//test {
-//    useJUnitPlatform()
-//
-//    testLogging {
-//        lifecycle {
-//            events "started", "skipped", "failed", "standard_error", "standard_out"
-//            exceptionFormat "short"
-//        }
-//    }
-//}
 
 tasks.withType(Test) {
     useJUnitPlatform()
