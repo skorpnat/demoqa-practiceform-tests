@@ -1,6 +1,7 @@
 package tests;
 
 import com.codeborne.selenide.logevents.SelenideLogger;
+import com.codeborne.selenide.Selenide;
 import config.ConfigReader;
 import config.ProjectConfiguration;
 import config.web.WebConfig;
@@ -28,7 +29,9 @@ public class TestBase {
         Attach.browserConsoleLogs();
         Attach.addVideo();
 
-        closeWebDriver();
+        Selenide.clearBrowserCookies();
+        Selenide.clearBrowserLocalStorage();
+        Selenide.closeWebDriver();
     }
 
 }
