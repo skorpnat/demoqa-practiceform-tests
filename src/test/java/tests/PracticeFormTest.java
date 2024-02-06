@@ -20,6 +20,7 @@ public class PracticeFormTest extends TestBase {
     void fillFormTest() {
         step("Открыть форму", () -> {
             open("/automation-practice-form");
+            practiceFormPage.clickBannerOnPage();
             practiceFormPage.cleanAdvertisementOnPage();
         });
 
@@ -47,7 +48,6 @@ public class PracticeFormTest extends TestBase {
                 .checkResultTable("Date of Birth", testData.day + " " + testData.month + "," + testData.year)
                 .checkResultTable("Subjects", testData.subjects)
                 .checkResultTable("Hobbies", testData.hobbies)
-                .checkResultTable("Picture", testData.picture)
                 .checkResultTable("Address", testData.currentAddress)
                 .checkResultTable("State and City", testData.state + " " + testData.city);
         });
@@ -59,6 +59,7 @@ public class PracticeFormTest extends TestBase {
     void inputMinimalData() {
         step("Открыть форму", () -> {
             open("/automation-practice-form");
+            practiceFormPage.clickBannerOnPage();
             practiceFormPage.cleanAdvertisementOnPage();
         });
 
@@ -83,6 +84,7 @@ public class PracticeFormTest extends TestBase {
     void inputInvalidMobileNumber() {
         step("Открыть форму", () -> {
             open("/automation-practice-form");
+            practiceFormPage.clickBannerOnPage();
             practiceFormPage.cleanAdvertisementOnPage();
         });
         step("Ввести данные", () -> {

@@ -28,11 +28,18 @@ public class PracticeFormPage {
             submit = $("#submit");
 
     public PracticeFormPage cleanAdvertisementOnPage() {
+
         executeJavaScript("$('#fixedban').remove()");
         executeJavaScript("$('footer').remove()");
         return this;
     }
-
+    public PracticeFormPage clickBannerOnPage() {
+        SelenideElement bannerRoot = $(".fc-consent-root");
+        if (bannerRoot.isDisplayed()) {
+            bannerRoot.$(byText("Соглашаюсь")).click();
+        }
+        return this;
+    }
     public PracticeFormPage setFirstName(String value) {
         firstName.setValue(value);
         return this;
